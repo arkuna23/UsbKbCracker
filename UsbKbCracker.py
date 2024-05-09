@@ -1,4 +1,6 @@
-import sys, argparse, os
+#!/usr/bin/env python
+
+import argparse, os
 
 class kbpaser:
 
@@ -63,7 +65,7 @@ class kbpaser:
 
         formatfile.close()
 
-    def jiemi(self):
+    def decrypt(self):
         print("\n-----开始解密Tshark导出的键盘数据-----\n")
         # 读取数据z
         with open("formatKbdatafile.txt", "r") as f:
@@ -155,7 +157,7 @@ if __name__ == "__main__":
      # tshark导出数据，存储在usbdatafile.txt内
     kbparser.tshark_do(pcapfile=arg.pcapfile, fieldvalue=arg.fieldvalue, filterfield=arg.filterfield)
     kbparser.formatkbdata()
-    kbparser.jiemi()
+    kbparser.decrypt()
 
     
 
